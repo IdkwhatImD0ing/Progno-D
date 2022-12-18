@@ -11,7 +11,6 @@ export default function Predict(props) {
     if (params.condition === undefined) {
       navigate('/');
     }
-    console.log(params.condition);
     fetch(`https://prognodserver.hop.sh/predict/${params.condition}`)
       .then((res) => res.json())
       .then((data) => {
@@ -32,15 +31,31 @@ export default function Predict(props) {
       }}
     >
       <Stack
+        maxWidth="80%"
         direction="column"
         spacing={5}
         alignItems="center"
         justifyContent="center"
       >
+        <Typography variant="h4" align="center">
+          Here are some drugs that may be useful for you based on user reviews,
+          ranked from most to least effective:
+        </Typography>
         {Object.keys(drugs).map((drug, index) => (
-          <Typography variant="h4" align="center" key={index}>
-            {drugs[drug]}
-          </Typography>
+          <Button
+            key={'button' + index}
+            sx={{
+              textTransform: 'none',
+              color: 'black',
+            }}
+            onClick={() => {
+              navigate(`/details/${drugs[drug]}`);
+            }}
+          >
+            <Typography variant="h5" align="center" key={index}>
+              {drugs[drug]}
+            </Typography>
+          </Button>
         ))}
       </Stack>
     </Box>
