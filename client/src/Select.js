@@ -23,7 +23,7 @@ export default function Select(props) {
 
   useEffect(() => {
     const results = conditions.filter((condition) =>
-      condition.toLowerCase().includes(search),
+      condition.toLowerCase().includes(search.toLowerCase()),
     );
     setConditions(results.sort());
   }, [search]);
