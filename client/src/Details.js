@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Box, Button, List, ListItem, Stack, Typography} from '@mui/material';
-import {useNavigate, useParams} from 'react-router-dom';
+import {Box, List, ListItem, Stack, Typography} from '@mui/material';
+import {useParams} from 'react-router-dom';
 import axios from 'axios';
 
 export default function Details(props) {
@@ -18,7 +18,6 @@ export default function Details(props) {
         'X-RapidAPI-Host': 'drug-info-and-price-history.p.rapidapi.com',
       },
     };
-
     axios
       .request(options)
       .then(function (response) {
@@ -27,7 +26,7 @@ export default function Details(props) {
       .catch(function (error) {
         console.error(error);
       });
-  }, []);
+  }, [drug]);
   return (
     <>
       <Box
@@ -39,8 +38,9 @@ export default function Details(props) {
           justifyContent: 'flexstart',
           alignItems: 'center',
           backgroundColor: 'lightgreen',
-          paddingTop: '10%',
+          paddingTop: '5%',
           overflow: 'auto',
+          paddingBottom: '5%',
         }}
       >
         <Stack

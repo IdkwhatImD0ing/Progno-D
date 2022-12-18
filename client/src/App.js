@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React from 'react';
 import Landing from './Landing';
 import Select from './Select';

@@ -16,7 +16,7 @@ export default function Predict(props) {
       .then((data) => {
         setDrugs(data.drugs.drugName);
       });
-  }, []);
+  }, [navigate, params.condition]);
 
   return (
     <Box
