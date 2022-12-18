@@ -1,7 +1,7 @@
 # Progno-D ⚕️
 ## *AI powered application for Recommendation of the Drugs*
 
-Overview 
+# Overview 
 There are numerous medications available for a sickness, and consumers sometimes have difficulty selecting prescriptions for their illnesses.The goal of our project  is to develop a recommendation system that assists patients by recommending drugs based on patient outcomes from medication reviews.
 The Progno-D system is an artificial intelligence-powered medicine recommendation platform.
 The user may instantly find a medicine recommendation for their selected health condition.
