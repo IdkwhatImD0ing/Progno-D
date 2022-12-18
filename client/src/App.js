@@ -1,25 +1,19 @@
 import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Landing from './Landing';
+import Select from './Select';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-function App() {
+export default function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/select" element={<Select />} />
+          {/*<Route path="/predict:condition" element={<Predict />} />*/}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
-
-export default App;
