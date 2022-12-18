@@ -1,6 +1,8 @@
 from flask import Flask
+import pandas as pd
 
 app = Flask(__name__)
+data = pd.read_csv("processedData.csv")
 
 
 @app.route("/")
@@ -8,9 +10,13 @@ def home():
     return "Hello, World!"
 
 
-@app.route("/predict/<condition>", methods=["POST"])
-def predict():
-    return "Prediction"
+@app.route("/predict/<condition>", methods=["POST", "GET"])
+def predict(condition):
+    prediction = data[data['condition'] == condition][[
+        'drugName', 'usefulness'
+    ]].sort_values(by='usefulness',
+                   ascending=False).head().reset_index(drop=True).to_dict()
+    return ({'drugs': prediction})
 
 
 if __name__ == "__main__":
