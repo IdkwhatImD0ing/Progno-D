@@ -14,3 +14,11 @@ The Progno-D system can help patients choose better medications for their condi
 # Dataset 📊
 The original dataset can be accessed in the UCI Machine Learning Repository.
 https://archive.ics.uci.edu/ml/datasets/Drug+Review+Dataset+%28Drugs.com%29
+
+
+# Demonstration Video 
+https://www.youtube.com/watch?v=eqZS5WqHXW4
+
+
+# Application URL
+https://prognod.hop.sh/
