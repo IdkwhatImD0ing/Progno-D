@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import React from 'react';
 import Landing from './Landing';
 import Select from './Select';
+import Predict from './Predict';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 export default function App(props) {
@@ -11,7 +12,7 @@ export default function App(props) {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/select" element={<Select />} />
-          {/*<Route path="/predict:condition" element={<Predict />} />*/}
+          <Route path="/predict/:condition" element={<Predict />} />
         </Routes>
       </BrowserRouter>
     </>

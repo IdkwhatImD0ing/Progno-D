@@ -10,6 +10,7 @@ import {
   TextField,
   InputAdornment,
   IconButton,
+  Button,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -18,7 +19,7 @@ import {conditions} from './conditions';
 export default function Select(props) {
   const [currentConditions, setConditions] = useState(conditions);
   const [search, setSearch] = useState('');
-  const [selected, setSelected] = useState('N/A');
+  const [selected, setSelected] = useState('None');
 
   useEffect(() => {
     const results = conditions.filter((condition) =>
@@ -100,6 +101,19 @@ export default function Select(props) {
             ))}
           </List>
         </Paper>
+        <Button
+          variant="contained"
+          href={`/predict/${selected}`}
+          sx={{
+            backgroundColor: 'green',
+
+            '&:hover': {
+              backgroundColor: 'darkgreen',
+            },
+          }}
+        >
+          Submit
+        </Button>
       </Stack>
     </Box>
   );
