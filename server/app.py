@@ -14,11 +14,9 @@ def home():
 
 @app.route("/predict/<condition>", methods=["POST", "GET"])
 def predict(condition):
-    prediction = data[data['condition'] == condition][[
-        'drugName', 'usefulness'
-    ]].sort_values(by='usefulness',
-                   ascending=False).head().reset_index(drop=True).to_dict()
-    return ({'drugs': prediction})
+    top = data[data['condition'] == condition][['drugName','usefulness']].sort_values(by = 'usefulness',ascending = False)
+    top = top.drop_duplicates(subset=['drugName']).head(5).reset_index(drop=True).to_dict()
+    return ({'drugs': top})
 
 
 if __name__ == "__main__":
