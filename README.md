@@ -1,5 +1,6 @@
 # Progno-D ⚕️
 ## *AI powered application for Recommendation of the Drugs*
+This project is primarily built on NLP and Sentiment Analysis and was created for Major League Hacking's AI Hacks Hackathon on DevPost.
 
 # *Overview*
 There are numerous medications available for a sickness, and consumers sometimes have difficulty selecting prescriptions for their illnesses.The goal of our project  is to develop a recommendation system that assists patients by recommending drugs based on patient outcomes from medication reviews.
